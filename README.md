@@ -1,4 +1,22 @@
-# html2ImageStream html转成图片流
+# html2-image-stream html转成图片流
+
+## 安装使用
+
+### npm
+```
+npm install html2-image-stream  --save
+
+import {html2ImageStream} from 'html2-image-stream'
+html2ImageStream()
+```
+
+### script
+```
+<script src="index.js"></script>
+
+const {html2ImageStream} = window.html2ImageStream
+html2ImageStream()
+```
 
 #### params
 * selector: 'string', // 类选择器，指定下载dom
