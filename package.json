@@ -1,0 +1,29 @@
+{
+  "name": "html2ImageStream",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "canvg": "^2.0.0",
+    "html2canvas": "^1.0.0-rc.3",
+    "jquery": "^3.4.1",
+    "webpack": "^3.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "webpack --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hollton/html2ImageStream.git"
+  },
+  "author": "holltonliu@163.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hollton/html2ImageStream/issues"
+  },
+  "homepage": "https://github.com/hollton/html2ImageStream#readme"
+}

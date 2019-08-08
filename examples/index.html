@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>html2ImageStream</title>
+</head>
+<body>
+	
+<script type="text/javascript" src="../index.js"></script></body>
+</html>
+	<div class='selector' onclick="html2Image()">点我将html转为图片流信息</div>
+	<p id='type'></p>
+	<textarea id='stream' style="resize:none" cols="160" rows="60"></textarea>
+<script>
+
+	var {html2ImageStream} = window.html2ImageStream
+	var html2Image = function(){
+		html2ImageStream('.selector', function(res){
+			document.getElementById('type').innerHTML = 'type：' + res.type
+			document.getElementById('stream').innerHTML = JSON.stringify(res.data)
+		})
+	}
+
+</script>
