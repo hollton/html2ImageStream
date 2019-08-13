@@ -1,18 +1,19 @@
 {
   "name": "html2-image-stream",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "canvg": "^2.0.0",
+    "html2canvas": "^1.0.0-rc.3",
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-es2015": "^6.24.1",
-    "canvg": "^2.0.0",
-    "html2canvas": "^1.0.0-rc.3",
-    "jquery": "^3.4.1",
     "webpack": "^3.5.3"
   },
-  "devDependencies": {},
   "scripts": {
     "build": "webpack --progress"
   },
