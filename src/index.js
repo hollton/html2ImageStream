@@ -52,9 +52,6 @@ const html2ImageStream = (selector, handleBack) => {
 
 const handleFinally = payload => {
   clickAllow = true
-  if (window.parent && window.eduBasicLib) {
-    window.eduBasicLib.eventFactory.sendEvent('eduLibHideWindow', { iframeId: window.eduBasicLib.iframe.iframeId })
-  }
   props.handleBack({
     type: payload.type,
     data: payload.data
@@ -70,11 +67,6 @@ const getScreenshotDoms = selector => {
 
 const triggerCreate = (screenshotDomList, index) => {
   var screenshotDom = screenshotDomList[index]
-  if (window.parent && window.eduBasicLib) {
-    window.eduBasicLib.eventFactory.sendEvent('eduLibShowWindow', {
-      iframeId: window.eduBasicLib.iframe.iframeId
-    })
-  }
   var nodeInfo = getNodeInfo(screenshotDom)
   var nodeEventType = nodeInfo.eventType
   var isLastEventType = nodeEventType.indexOf('last') !== -1

@@ -10751,9 +10751,6 @@ var html2ImageStream = function html2ImageStream(selector, handleBack) {
 
 var handleFinally = function handleFinally(payload) {
   clickAllow = true;
-  if (window.parent && window.eduBasicLib) {
-    window.eduBasicLib.eventFactory.sendEvent('eduLibHideWindow', { iframeId: window.eduBasicLib.iframe.iframeId });
-  }
   props.handleBack({
     type: payload.type,
     data: payload.data
@@ -10769,11 +10766,6 @@ var getScreenshotDoms = function getScreenshotDoms(selector) {
 
 var triggerCreate = function triggerCreate(screenshotDomList, index) {
   var screenshotDom = screenshotDomList[index];
-  if (window.parent && window.eduBasicLib) {
-    window.eduBasicLib.eventFactory.sendEvent('eduLibShowWindow', {
-      iframeId: window.eduBasicLib.iframe.iframeId
-    });
-  }
   var nodeInfo = getNodeInfo(screenshotDom);
   var nodeEventType = nodeInfo.eventType;
   var isLastEventType = nodeEventType.indexOf('last') !== -1;
