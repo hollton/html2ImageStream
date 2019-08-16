@@ -164,12 +164,6 @@ const triggerCreate = (screenshotDomList, index) => {
 }
 
 const createImage = screenshotDom => {
-  var iframe = document.getElementById('download-iframe')
-  iframe && document.body.removeChild(iframe)
-  // 唤起客户端代码中的iframe，IE下html2canvas会再次唤起，所以需要移除iframe
-  // http://pms.sdp.nd/index.php?m=bug&f=view&bugID=128024
-  var pcStartIframe = document.getElementById('pcStartIframe')
-  pcStartIframe && document.body.removeChild(pcStartIframe)
   if (!$(screenshotDom).is(':hidden')) {
     return createCanvas($(screenshotDom)).then(function (canvas) {
       const image = canvas.toDataURL()
