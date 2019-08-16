@@ -1,4 +1,4 @@
-import $ from "jquery"
+import $ from 'jquery'
 import canvg from 'canvg'
 import html2canvas from 'html2canvas'
 

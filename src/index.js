@@ -10,7 +10,7 @@
  *   })
  */
 
-import $ from "jquery"
+import $ from 'jquery'
 import createCanvas from './createCanvas'
 
 var clickAllow = true
@@ -46,6 +46,11 @@ const html2ImageStream = (selector, handleBack) => {
       data: '暂无报告'
     })
     return
+  }
+  // 截图之前移除IE下载创建的临时iframe，防止html2canvas截图触发下载
+  const iframes = document.getElementsByTagName('iframe')
+  for (let i = 0; i < iframes.length; i++) {
+    document.body.removeChild(iframes[i])
   }
   triggerCreate(state.screenshotDoms, 0)
 }
