@@ -1,4 +1,4 @@
-# html2-image-stream html转成图片流
+# html2-image-stream html转为图片数据流（data:image/png[;base64],<data>）
 
 ## 安装使用
 
@@ -23,8 +23,11 @@ html2ImageStream()
 * handleBack: function // 回调
 #### return
 * res: {
+
     type: 'string', // 'success'成功，'error'错误
-    data: ['imageStream',...], // type==='success'时返回图片流信息，type==='error'返回错误信息
+
+    data: ['data:image/png;base64,${data}', ...], // type==='success'时返回图片流信息，type==='error'返回错误信息
+
 }
 ```
 html2ImageStream('.selector', function(res){
