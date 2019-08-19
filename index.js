@@ -10746,6 +10746,11 @@ var html2ImageStream = function html2ImageStream(selector, handleBack) {
     });
     return;
   }
+  // 截图之前移除IE下载创建的临时iframe，防止html2canvas截图触发下载
+  var iframes = document.getElementsByTagName('iframe');
+  for (var i = 0; i < iframes.length; i++) {
+    document.body.removeChild(iframes[i]);
+  }
   triggerCreate(state.screenshotDoms, 0);
 };
 
@@ -10844,12 +10849,6 @@ var triggerCreate = function triggerCreate(screenshotDomList, index) {
 };
 
 var createImage = function createImage(screenshotDom) {
-  var iframe = document.getElementById('download-iframe');
-  iframe && document.body.removeChild(iframe);
-  // 唤起客户端代码中的iframe，IE下html2canvas会再次唤起，所以需要移除iframe
-  // http://pms.sdp.nd/index.php?m=bug&f=view&bugID=128024
-  var pcStartIframe = document.getElementById('pcStartIframe');
-  pcStartIframe && document.body.removeChild(pcStartIframe);
   if (!(0, _jquery2.default)(screenshotDom).is(':hidden')) {
     return (0, _createCanvas2.default)((0, _jquery2.default)(screenshotDom)).then(function (canvas) {
       var image = canvas.toDataURL();
