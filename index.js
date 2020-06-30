@@ -10851,11 +10851,12 @@ var triggerCreate = function triggerCreate(screenshotDomList, index) {
 var createImage = function createImage(screenshotDom) {
   if (!(0, _jquery2.default)(screenshotDom).is(':hidden')) {
     return (0, _createCanvas2.default)((0, _jquery2.default)(screenshotDom)).then(function (canvas) {
-      var image = canvas.toDataURL();
-      if (image) {
-        state.imgsList.push(image);
-      }
-      return image;
+      state.imgsList.push({
+        image: canvas.toDataURL(),
+        width: canvas.width,
+        height: canvas.height
+      });
+      return state.imgsList;
     });
   }
   return Promise.resolve(undefined);

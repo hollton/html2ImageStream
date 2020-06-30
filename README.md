@@ -26,8 +26,11 @@ html2ImageStream()
 
     type: 'string', // 'success'成功，'error'错误
 
-    data: ['data:image/png;base64,${data}', ...], // type==='success'时返回图片流信息，type==='error'返回错误信息
-
+    data: [{ // type==='success'时返回图片流信息，type==='error'返回错误信息
+        image: 'data:image/png;base64,${data}',
+        width: '',
+        height: ''
+    }, ...]
 }
 ```
 html2ImageStream('.selector', function(res){

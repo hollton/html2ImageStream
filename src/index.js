@@ -171,11 +171,12 @@ const triggerCreate = (screenshotDomList, index) => {
 const createImage = screenshotDom => {
   if (!$(screenshotDom).is(':hidden')) {
     return createCanvas($(screenshotDom)).then(function (canvas) {
-      const image = canvas.toDataURL()
-      if (image) {
-        state.imgsList.push(image)
-      }
-      return image
+      state.imgsList.push({
+        image: canvas.toDataURL(),
+        width: canvas.width,
+        height: canvas.height
+      })
+      return state.imgsList
     })
   }
   return Promise.resolve(undefined)
