@@ -1,4 +1,4 @@
-# html2-image-stream html转为图片数据流（data:image/png[;base64],<data>）
+# html2-image-stream html转为图片数据流（data:image/png[;base64],${data}）
 
 ## 安装使用
 
