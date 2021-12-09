@@ -1,4 +1,11 @@
-# html2-image-stream html转为图片数据流（data:image/png[;base64],${data}）
+# html2-image-stream
+
+![](https://flat.badgen.net/npm/v/html2-image-stream)
+![](https://flat.badgen.net/bundlephobia/html2-image-stream)
+![](https://flat.badgen.net/npm/license/html2-image-stream)
+![](https://flat.badgen.net/npm/dt/html2-image-stream)
+
+HTML页面转为图片数据流（data:image/png[;base64],${data}）
 
 ## 安装使用
 
